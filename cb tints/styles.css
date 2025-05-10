@@ -2457,3 +2457,114 @@ footer {
         width: 100%;
     }
 }
+
+/* Mobile Menu Button Styles */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+    margin-top: -20px;
+}
+
+.mobile-menu-btn i.fas {
+    font-size: 24px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+    line-height: 1;
+}
+
+/* Mobile Navigation Styles */
+.nav-cta {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+        background-color: transparent;
+        padding: 10px;
+        margin-left: 10px;
+        margin-top: -15px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--dark-blue);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        transition: var(--transition-normal);
+        padding: 80px 20px 20px;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    .main-nav.active {
+        right: 0;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .main-nav a {
+        font-size: 1.1rem;
+        display: block;
+        padding: 10px 0;
+        color: #FFFFFF;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .main-nav a:hover {
+        color: var(--light-blue);
+    }
+    
+    /* When menu is active, adjust hamburger to X */
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Add overlay when menu is active */
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-normal);
+    }
+    
+    body.menu-open::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
