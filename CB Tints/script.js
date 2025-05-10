@@ -133,15 +133,25 @@ function initScrollAnimations() {
     window.addEventListener('resize', checkScroll);
 }
 
-// Gallery See More functionality
+// Gallery functionality with image fade-in effect
 function initGallery() {
+    // Set up Intersection Observer for image fade-in effect
+    initGalleryImagesObserver();
+    
+    // Setup See More button functionality
     const seeMoreBtn = document.getElementById('see-more-btn');
     if (seeMoreBtn) {
         seeMoreBtn.addEventListener('click', function() {
             const hiddenItems = document.querySelectorAll('.gallery-item.hidden');
             
             // Show hidden items
-            hiddenItems.forEach(item => item.classList.remove('hidden'));
+            hiddenItems.forEach(item => {
+                item.classList.remove('hidden');
+                // Add fade-in class to newly revealed items
+                setTimeout(() => {
+                    item.classList.add('fade-in');
+                }, 10); // Small delay for the transition to work properly
+            });
             
             // Change button text to 'Show Less' and update functionality
             this.innerHTML = '<i class="fas fa-compress-alt"></i> Show Less';
@@ -160,6 +170,7 @@ function initGallery() {
                 // Hide items again
                 hiddenItems.forEach(item => {
                     item.classList.add('hidden');
+                    item.classList.remove('fade-in');
                 });
                 
                 // Reset button text
@@ -181,6 +192,50 @@ function initGallery() {
             });
         });
     }
+}
+
+// Initialize Intersection Observer for gallery images
+function initGalleryImagesObserver() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (!galleryItems.length) return;
+    
+    // Options for the observer
+    const options = {
+        root: null, // Use viewport as root
+        rootMargin: '0px 0px 50px 0px', // Start loading slightly before they come into view
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    };
+    
+    // Create the observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const item = entry.target;
+                const img = item.querySelector('img');
+                
+                // Only load the image if it's not already loaded
+                if (img && img.dataset.src && !img.src) {
+                    img.src = img.dataset.src;
+                    img.onload = () => {
+                        item.classList.add('fade-in');
+                    };
+                } else {
+                    // If already loaded, just add the fade-in class
+                    item.classList.add('fade-in');
+                }
+                
+                // Stop observing once the element has been processed
+                observer.unobserve(item);
+            }
+        });
+    }, options);
+    
+    // Start observing each gallery item
+    galleryItems.forEach(item => {
+        observer.observe(item);
+        item.classList.add('will-fade');
+    });
 }
 
 // Initialize gallery functionality when DOM content is loaded
