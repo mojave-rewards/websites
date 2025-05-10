@@ -3,11 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional automotive window tinting services in Sumter, SC. Premium quality, lifetime warranty, and same-day service available.">
+    <meta name="description" content="Professional automotive window tinting services in Sumter, SC. Premium quality and same-day service available.">
     <title>CB Tints | Professional Window Tinting | Sumter, SC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="https://img.icons8.com/fluency/48/car-window.png" type="image/png">
+    <style>
+        :root {
+            --dark-blue: #0D1B2A;
+            --medium-blue: #1B263B;
+            --blue: #1E73BE;
+            --light-blue: #4D9DE0;
+            --accent: #E0E1DD;
+            --text-light: #FFFFFF;
+            --text-dark: #0D1B2A;
+        }
+        
+        body {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+        }
+        
+        h1, h2, h3, h4, h5, h6, p, li, a, span, div {
+            color: var(--text-light);
+        }
+        
+        input, textarea, select {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        label {
+            color: var(--text-light);
+        }
+        
+        .footer-desc, .footer-payment-options span, .footer-links li a {
+            color: var(--text-light);
+        }
+        
+        .footer-column h4 {
+            color: var(--blue);
+        }
+        
+        .header {
+            background-color: var(--dark-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo a {
+            color: var(--text-light);
+        }
+        
+        .logo span {
+            color: var(--blue);
+        }
+        
+        .main-nav ul li a {
+            color: var(--text-light);
+        }
+        
+        .main-nav ul li a:hover {
+            color: var(--light-blue);
+        }
+        
+        .phone-link {
+            color: var(--text-light);
+            background-color: var(--blue);
+        }
+        
+        .phone-link:hover {
+            background-color: var(--light-blue);
+        }
+        
+        section {
+            background-color: var(--medium-blue);
+        }
+        
+        .section-header h2 {
+            color: var(--text-light);
+        }
+        
+        .section-header p {
+            color: var(--accent);
+        }
+        
+        .section-tag {
+            background-color: var(--blue);
+            color: var(--text-light);
+        }
+        
+        .benefit-card {
+            background-color: var(--dark-blue);
+        }
+        
+        .benefit-icon {
+            color: var(--blue);
+        }
+        
+        .primary-btn {
+            background-color: var(--blue);
+            color: var(--text-light);
+        }
+        
+        .primary-btn:hover {
+            background-color: var(--light-blue);
+        }
+        
+        .secondary-btn {
+            background-color: transparent;
+            border: 2px solid var(--blue);
+            color: var(--text-light);
+        }
+        
+        .secondary-btn:hover {
+            background-color: var(--blue);
+            color: var(--text-light);
+        }
+        
+        .trust-badges .badge {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+        }
+        
+        .testimonial-card {
+            background-color: var(--dark-blue);
+        }
+        .testimonial-author h4 {
+            color: #fff !important;
+        }
+        
+        .testimonial-content p {
+            color: var(--text-light);
+        }
+        
+        .contact-item {
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+        
+        .contact-item h4 {
+            color: var(--blue);
+        }
+        
+        .footer {
+            background-color: var(--dark-blue);
+        }
+        
+        .faq-item {
+            background-color: var(--dark-blue);
+        }
+        
+        .faq-question {
+            color: var(--text-light);
+        }
+        
+        .faq-answer {
+            color: var(--accent);
+        }
+        
+        .portfolio-section, .testimonials-section, .contact-section {
+            background-color: var(--medium-blue);
+        }
+        
+        .why-us-section, .faq-section {
+            background-color: var(--dark-blue);
+        }
+        .hero {
+            background: linear-gradient(135deg, #0D1B2A 0%, #1E73BE 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1, .hero h1 span {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .quote-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .quote-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e73be;
+            color: white;
+            padding: 25px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            min-height: 120px;
+        }
+        
+        .quote-button:hover {
+            background-color: #1a5c96;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .quote-button i {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        
+        .quote-button span {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .button-subtitle {
+            font-weight: normal;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .quote-note {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-buttons-wrapper {
+                padding: 30px;
+            }
+            
+            .hero-content {
+                padding: 120px 20px !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -27,7 +275,7 @@
                 </ul>
             </nav>
             <div class="nav-cta">
-                <a href="tel:+15551234567" class="phone-link"><i class="fas fa-phone-alt"></i> (555) 123-4567</a>
+
                 <button class="mobile-menu-btn">
                     <span></span>
                     <span></span>
@@ -40,22 +288,14 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content" style="width: 100%; text-align: center; padding: 80px 20px;">
                 <h1>Professional Window Tinting<br><span>For Your Vehicle</span></h1>
                 <p>Experience premium quality tinting that keeps your car cooler, protects against UV rays, and enhances your vehicle's appearance.</p>
-                <div class="hero-cta">
-                    <button id="quoteBtn" class="primary-btn"><i class="fas fa-calculator"></i> Get a Free Quote</button>
+                <div class="hero-cta hero-cta-center" style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px; margin-top: 32px;">
+                    <a href="#contact" class="primary-btn"><i class="fas fa-calculator"></i> Get a Free Quote</a>
                     <a href="#portfolio" class="secondary-btn">View Gallery</a>
-                </div>
-                <div class="trust-badges">
-                    <div class="badge"><i class="fas fa-shield-alt"></i> Lifetime Warranty</div>
-                    <div class="badge"><i class="fas fa-certificate"></i> Certified Professionals</div>
-                    <div class="badge"><i class="fas fa-clock"></i> Same-Day Service</div>
-                </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1606077969941-ce31c6d5b5b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Professional Window Tinting">
-            </div>
+
         </div>
     </section>
 
@@ -71,13 +311,7 @@
             </div>
             
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Expert Installation</h3>
-                    <p>Our technicians are certified and have over 10 years of experience in automotive window tinting.</p>
-                </div>
+
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
@@ -95,13 +329,7 @@
                     <p>We're not happy until you're happy with your window tint installation.</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Lifetime Warranty</h3>
-                    <p>Our installations come with a lifetime warranty against peeling, bubbling or discoloration.</p>
-                </div>
+
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
@@ -313,8 +541,8 @@
                 <div class="contact-info-column">
                     <div class="section-header text-left">
                         <span class="section-tag">Contact Us</span>
-                        <h2>Get In Touch</h2>
-                        <p>We're here to answer your questions and provide professional window tinting services</p>
+                        <h2>Contact Us</h2>
+                        <p>Contact us today for a free quote or if you just have any questions.</p>
                     </div>
                     
                     <div class="contact-details">
@@ -322,23 +550,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h4>Location</h4>
-                                <p>123 Main Street<br>Sumter, SC 29150</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p><a href="tel:+15551234567">(555) 123-4567</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:info@cbtints.com">info@cbtints.com</a></p>
+                                <p>Sumter, SC</p>
                             </div>
                         </div>
                         
@@ -346,52 +558,36 @@
                             <i class="fas fa-clock"></i>
                             <div>
                                 <h4>Hours</h4>
-                                <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 2pm<br>Sunday: Closed</p>
+                                <p>Monday - Friday: 7am - 2pm<br>Saturday: 7am - noon<br>Sunday: Closed</p>
                             </div>
-                        </div>
-                        
-                        <div class="social-links">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form-column">
-                    <div class="contact-form-wrapper">
-                        <h3>Send Us a Message</h3>
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Full Name*</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
+                    <div class="contact-buttons-wrapper">
+                        
+                        <div class="quote-buttons">
+                            <a href="tel:+18038478035" class="quote-button phone-button">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Call Us</span>
+                                <span class="button-subtitle">(803) 847-8035</span>
+                            </a>
                             
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email*</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="phone">Phone*</label>
-                                    <input type="tel" id="phone" name="phone" required>
-                                </div>
-                            </div>
+                            <a href="mailto:cbrunson5.cb@gmail.com" class="quote-button email-button">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email Us</span>
+                                <span class="button-subtitle">cbrunson5.cb@gmail.com</span>
+                            </a>
                             
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message*</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
+                            <a href="https://www.facebook.com/profile.php?id=61573002638246" class="quote-button facebook-button" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                                <span class="button-subtitle">Message us directly</span>
+                            </a>
+                        </div>
+                        
+                        <p class="quote-note"><i class="fas fa-info-circle"></i> We'll respond to your quote request promptly during business hours.</p>
                     </div>
                 </div>
             </div>
@@ -407,59 +603,29 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column logo-column">
-                    <div class="footer-logo">
-                        <a href="#">
-                            <span>CB</span>Tints
-                        </a>
-                    </div>
-                    <p class="footer-desc">Professional automotive window tinting services in Sumter, South Carolina. Providing high-quality window films, expert installation, and exceptional customer service since 2010.</p>
-                    <div class="footer-payment-options">
-                        <span>We accept:</span>
-                        <div class="payment-icons">
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-amex"></i>
-                            <i class="fab fa-cc-discover"></i>
-                        </div>
-                    </div>
-                </div>
+    <div class="footer-logo">
+        <a href="#">
+            <span>CB</span>Tints
+        </a>
+    </div>
+    <p class="footer-desc">Professional automotive window tinting services in Sumter, South Carolina. Providing high-quality window films, expert installation, and exceptional customer service since 2010.</p>
+</div>
+<div class="footer-column">
+    <div class="footer-quick-links">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </div>
+</div>
                 
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services">Our Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#why-us">Why Choose Us</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
                 
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Standard Tint</a></li>
-                        <li><a href="#">Ceramic Tint</a></li>
-                        <li><a href="#">Carbon Tint</a></li>
-                        <li><a href="#">Windshield Strips</a></li>
-                        <li><a href="#">Tint Removal</a></li>
-                    </ul>
-                </div>
                 
-                <div class="footer-column">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter to receive updates and special offers.</p>
-                    <form class="footer-newsletter">
-                        <input type="email" placeholder="Your email address">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
+                
             </div>
             
             <div class="footer-bottom">
