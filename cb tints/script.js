@@ -40,17 +40,16 @@ function initNavbar() {
         mobileMenuBtn.addEventListener('click', () => {
             nav.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
             
-            // Change menu button appearance
-            const spans = mobileMenuBtn.querySelectorAll('span');
+            // Change menu button icon between bars and X
+            const icon = mobileMenuBtn.querySelector('i');
             if (mobileMenuBtn.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
         
@@ -60,11 +59,11 @@ function initNavbar() {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
+                document.body.classList.remove('menu-open');
                 
-                const spans = mobileMenuBtn.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             });
         });
     }
