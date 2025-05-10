@@ -691,11 +691,17 @@ nav a:hover::after {
     margin: 0 auto;
 }
 
+.testimonial-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+    /* Fixed height to prevent layout shifts */
+    height: 350px;
+}
+
 .testimonial-container {
     position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
-    height: 320px; /* Fixed height instead of min-height */
+    height: 100%;
+    width: 100%;
 }
 
 .testimonial {
@@ -712,7 +718,15 @@ nav a:hover::after {
     left: 0;
     right: 0;
     height: 100%;
-    overflow-y: auto; /* Allow scrolling if content is too long */
+    overflow-y: auto;
+    /* Hide scrollbar but allow scrolling if needed */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.testimonial::-webkit-scrollbar {
+    display: none;
 }
 
 .testimonial.active {
@@ -1399,5 +1413,28 @@ footer ul a:hover {
     .testimonial-prev,
     .testimonial-next {
         display: none;
+    }
+    
+    /* Fixed height testimonial solution for mobile */
+    .testimonial-wrapper {
+        height: 320px !important; /* Slightly smaller height for mobile */
+    }
+    
+    .testimonial-container {
+        height: 100% !important;
+        width: 100% !important;
+    }
+    
+    .testimonial {
+        position: absolute !important; /* Keep absolutely positioned */
+        height: 100% !important;
+        width: 100% !important;
+        overflow-y: auto !important;
+        font-size: 0.95rem; /* Slightly smaller font for better mobile fit */
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 }
