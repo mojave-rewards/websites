@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | CB Tints | Professional Window Tinting | Sumter, SC</title>
+  <meta name="description" content="View our portfolio of professional automotive window tinting projects in Sumter, SC.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://img.icons8.com/fluency/48/car-window.png" type="image/png">
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease, opacity 0.5s ease;
+      opacity: 0;
+    }
+
+    .gallery img.loaded {
+      opacity: 1;
+    }
+
+    .gallery a:hover img {
+      transform: scale(1.05);
+    }
+
+    .error {
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .gallery-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gallery-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .gallery-header p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <span>CB</span>Tints
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html#portfolio">Gallery</a></li>
+          <li><a href="index.html#why-us">Why Choose Us</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="tel:+15551234567" class="phone-link"><i class="fas fa-phone-alt"></i> (555) 123-4567</a>
+        <button class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="gallery-container">
+    <div class="gallery-header">
+      <h1>Our Work Gallery</h1>
+      <p>Browse through our showcase of premium window tinting projects</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+
+  <script>
+    fetch('images/list.json')
+      .then(res => res.json())
+      .then(files => {
+        const gallery = document.getElementById('gallery');
+        files.forEach(file => {
+          const link = document.createElement('a');
+          link.href = `images/gallery/${file}`;
+          link.setAttribute('data-lightbox', 'gallery');
+
+          const img = document.createElement('img');
+          img.dataset.src = `images/gallery/${file}`;
+          img.alt = file;
+          img.onerror = () => {
+            img.classList.add('error');
+            img.alt = 'Image failed to load';
+            img.src = '';
+            img.style.background = '#ccc';
+          };
+          link.appendChild(img);
+          gallery.appendChild(link);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.onload = () => img.classList.add('loaded');
+              observer.unobserve(img);
+            }
+          });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          observer.observe(img);
+        });
+      });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column logo-column">
+          <div class="footer-logo">
+            <a href="index.html">
+              <span>CB</span>Tints
+            </a>
+          </div>
+          <p class="footer-desc">Professional automotive window tinting services in Sumter, South Carolina. Providing high-quality window films, expert installation, and exceptional customer service since 2010.</p>
+          <div class="footer-payment-options">
+            <span>We accept:</span>
+            <div class="payment-icons">
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-amex"></i>
+              <i class="fab fa-cc-discover"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#services">Our Services</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#why-us">Why Choose Us</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#services">Standard Tint</a></li>
+            <li><a href="index.html#services">Ceramic Tint</a></li>
+            <li><a href="index.html#services">Carbon Tint</a></li>
+            <li><a href="index.html#services">Windshield Strips</a></li>
+            <li><a href="index.html#services">Tint Removal</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Newsletter</h4>
+          <p>Subscribe to our newsletter to receive updates and special offers.</p>
+          <form class="footer-newsletter">
+            <input type="email" placeholder="Your email address">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 CB Tints. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
