@@ -143,22 +143,37 @@ function initGallery() {
     if (seeMoreBtn) {
         seeMoreBtn.addEventListener('click', function() {
             const hiddenItems = document.querySelectorAll('.gallery-item.hidden');
+            const isMobile = window.innerWidth <= 768;
+            let firstHiddenItem = null;
             
             // Show hidden items
-            hiddenItems.forEach(item => {
+            hiddenItems.forEach((item, index) => {
                 item.classList.remove('hidden');
+                
+                // Keep track of the first item for immediate loading on mobile
+                if (index === 0) {
+                    firstHiddenItem = item;
+                }
+                
                 // Add fade-in class to newly revealed items
                 setTimeout(() => {
                     item.classList.add('fade-in');
                 }, 10); // Small delay for the transition to work properly
             });
             
+            // Immediately load the first hidden image on mobile
+            if (isMobile && firstHiddenItem) {
+                const img = firstHiddenItem.querySelector('img');
+                if (img && img.dataset.src && !img.src) {
+                    img.src = img.dataset.src;
+                }
+            }
+            
             // Change button text to 'Show Less' and update functionality
             this.innerHTML = '<i class="fas fa-compress-alt"></i> Show Less';
             this.classList.add('active');
             
             // Skip scrolling on mobile devices
-            const isMobile = window.innerWidth <= 768;
             if (!isMobile) {
                 // Only scroll on desktop/larger screens
                 document.querySelector('.portfolio-section').scrollIntoView({ behavior: 'smooth' });
