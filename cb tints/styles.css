@@ -998,7 +998,7 @@ a:hover {
 }
 
 .faq-answer p {
-    color: var(--gray);
+    color: #FFFFFF;
     font-size: 0.95rem;
     margin-bottom: 0;
 }
@@ -1053,7 +1053,7 @@ a:hover {
 
 .contact-item p, .contact-item a {
     margin-bottom: 0;
-    color: var(--gray);
+    color: #FFFFFF;
     font-size: 0.95rem;
     transition: var(--transition-fast);
 }
