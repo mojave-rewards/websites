@@ -1432,7 +1432,7 @@ footer ul a:hover {
     
     .logo {
         color: var(--dark-color);
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .nav-toggle {
@@ -1515,6 +1515,17 @@ footer ul a:hover {
 }
 
 @media (max-width: 576px) {
+    /* Improve mobile button phone number display */
+    .quote-button {
+        padding: 30px 20px;
+    }
+    
+    .quote-button .button-desc {
+        font-size: 0.9rem;
+        word-break: keep-all;
+        white-space: nowrap;
+    }
+    
     .section-padding {
         padding: 40px 0;
     }
