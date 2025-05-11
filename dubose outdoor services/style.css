@@ -1197,6 +1197,13 @@ footer ul a:hover {
 }
 
 /* Quote Buttons Section */
+
+/* Ensure button-desc text under Facebook and SMS buttons is white */
+.quote-button.text-button .button-desc,
+.quote-button.facebook-button .button-desc {
+    color: white !important;
+}
+
 .quote-buttons-container {
     max-width: 900px;
     margin: 0 auto;
@@ -1554,9 +1561,10 @@ footer ul a:hover {
         display: none;
     }
     
-    /* Fixed height testimonial solution for mobile */
+    /* Fixed height testimonial solution for mobile to prevent layout shifts */
     .testimonial-wrapper {
-        height: auto !important;
+        height: 450px !important; /* Fixed height that fits all testimonials */
+        overflow: hidden;
     }
     
     .testimonial-container {
@@ -1565,11 +1573,12 @@ footer ul a:hover {
     }
     
     .testimonial {
-        position: static !important;
-        height: auto !important;
+        position: absolute !important; /* Keep absolute positioning */
+        height: 100% !important;
         width: 100% !important;
-        overflow-y: visible !important;
+        overflow-y: auto !important; /* Allow scrolling if needed */
         font-size: 0.95rem; /* Slightly smaller font for better mobile fit */
+        padding: 30px 20px !important; /* Consistent padding */
     }
     
     .testimonial-text {
