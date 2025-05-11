@@ -5,6 +5,103 @@ document.addEventListener('DOMContentLoaded', function() {
         once: true,
         offset: 100
     });
+    
+    // Track page view and send to Google Sheets
+    function trackPageView() {
+        // Google Apps Script web app URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzflKftq-T91ZceS_XXNeDQcaqULQLfe92VJnfZpmeBUl8dgIoaOx9jWkio97MO1C0/exec';
+        
+        // Get current date and time
+        const viewDate = new Date().toISOString();
+        
+        // Get page URL
+        const pageUrl = window.location.pathname;
+        
+        // Prepare data to send
+        const data = new FormData();
+        data.append('timestamp', viewDate);
+        data.append('buttonType', 'Page View'); // Changed to buttonType for consistency
+        data.append('pageUrl', pageUrl);
+        
+        // Send data to Google Sheet
+        fetch(scriptURL, {
+            method: 'POST',
+            body: data
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log('Success tracking page view:', data);
+        })
+        .catch(error => {
+            console.error('Error tracking page view:', error);
+        });
+        
+        console.log('Attempting to track page view for:', pageUrl);
+    }
+    
+    // Call the page view tracking function when the page loads
+    trackPageView();
+
+    // Track button clicks and send to Google Sheets
+    function trackButtonClick(buttonType) {
+        // Google Apps Script web app URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzflKftq-T91ZceS_XXNeDQcaqULQLfe92VJnfZpmeBUl8dgIoaOx9jWkio97MO1C0/exec';
+        
+        // Get current date and time
+        const clickDate = new Date().toISOString();
+        
+        // Get page URL
+        const pageUrl = window.location.pathname;
+        
+        // Prepare data to send
+        const data = new FormData();
+        data.append('timestamp', clickDate);
+        data.append('buttonType', buttonType);
+        data.append('pageUrl', pageUrl); // Added page URL for consistency
+        
+        // Send data to Google Sheet
+        fetch(scriptURL, {
+            method: 'POST',
+            body: data
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log('Success tracking button click:', data);
+        })
+        .catch(error => {
+            console.error('Error tracking button click:', error);
+        });
+        
+        console.log('Attempting to track click on:', buttonType);
+    }
+    
+    // Add click event listeners to the contact buttons
+    const textButton = document.querySelector('.quote-button.text-button');
+    const facebookButton = document.querySelector('.quote-button.facebook-button');
+    
+    if (textButton) {
+        textButton.addEventListener('click', function() {
+            trackButtonClick('Text Message');
+            // Let the default action happen (opening SMS app)
+        });
+    }
+    
+    if (facebookButton) {
+        facebookButton.addEventListener('click', function() {
+            trackButtonClick('Facebook Message');
+            // Let the default action happen (opening Facebook Messenger)
+        });
+    }
 
     // Sticky Header
     const header = document.querySelector('header');
