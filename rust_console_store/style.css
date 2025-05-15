@@ -220,6 +220,9 @@ body.no-scroll { overflow: hidden; }
 
 /* Remove any previous mobile rules for #special-items-grid and .item-card */
 
+
+
+
 body.no-scroll, html.no-scroll {
   overflow: hidden !important;
   height: 100%;
