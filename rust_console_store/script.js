@@ -119,3 +119,36 @@ const bundles = [
   document.body.classList.remove('no-scroll');
   document.documentElement.classList.remove('no-scroll');
 
+// ==== COUNTDOWN CLOCK ====
+
+/*
+  Set your next update time here!
+  Format: "YYYY-MM-DDTHH:MM:SSZ" for UTC, or "YYYY-MM-DDTHH:MM:SS" for local
+  Example: "2024-06-01T20:00:00Z" for June 1, 2024, 8pm UTC
+*/
+const nextUpdateTime = new Date("2025-05-21T20:00:00Z"); // <-- change to your real update time
+
+function updateCountdown() {
+  const now = new Date();
+  let diff = nextUpdateTime - now;
+  if (diff < 0) diff = 0;
+
+  // Calculate days, hours, minutes, seconds
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  // Format with leading zeros
+  const str =
+    (days > 0 ? `${days}d ` : "") +
+    `${hours.toString().padStart(2, "0")}:` +
+    `${minutes.toString().padStart(2, "0")}:` +
+    `${seconds.toString().padStart(2, "0")}`;
+
+  document.getElementById("countdown-clock").textContent =
+    "Next Update 🕓 " + str;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown(); // initial call
