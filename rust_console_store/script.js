@@ -110,3 +110,8 @@ const bundles = [
     // Remove no-scroll class from body
     document.body.classList.remove('no-scroll');
   }
+
+  document.body.classList.add('no-scroll');
+  document.documentElement.classList.add('no-scroll');
+  document.body.classList.remove('no-scroll');
+  document.documentElement.classList.remove('no-scroll');
