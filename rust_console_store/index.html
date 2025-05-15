@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rust Console Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Rust Console Store</h1>
+  <div id="bundle-container"></div>
+  <div id="bundle-details" class="hidden">
+    <div class="bundle-modal-content">
+      <span onclick="closeDetails()" class="close-button" aria-label="Close">×</span>
+      <h2 id="bundle-title"></h2>
+      <div id="items-grid"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
