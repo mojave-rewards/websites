@@ -229,3 +229,12 @@ body.no-scroll, html.no-scroll {
   width: 100%;
   position: fixed;
 }
+
+
+#countdown-clock {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 14px;
+  color: #ffb300;
+  letter-spacing: 0.04em;
+}
