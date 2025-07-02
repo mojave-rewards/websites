@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 3, name: 'Fallout 76 Xbox One', points: 30, category: 'games', type: 'key', image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1yc4.webp' },
         { id: 4, name: 'Assassin\'s Creed Unity Xbox One', points: 30, category: 'games', type: 'key', image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1xiq.webp' },
         { id: 5, name: 'Apple Music 1 Month', points: 30, category: 'services', type: 'key', image: 'https://www.apple.com/newsroom/images/product/apple-music/apple_music-update_hero_08242021.jpg.news_app_ed.jpg' },
-        { id: 6, name: 'Apple Arcade 2 months', points: 50, category: 'services', type: 'key', image: 'https://images.g2a.com/300x400/1x1x1/apple-arcade-membership-3-months-apple-key-united-states-i10000500509002/83fdd6d7c29642a9bafdcbcd' },
+        { id: 6, name: 'Apple Arcade 2 Months', points: 50, category: 'services', type: 'key', image: 'https://images.g2a.com/300x400/1x1x1/apple-arcade-membership-3-months-apple-key-united-states-i10000500509002/83fdd6d7c29642a9bafdcbcd' },
         { id: 7, name: 'Battlefield Hardline', points: 50, category: 'games', type: 'key', image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1nmg.webp' },
         { id: 8, name: 'Battlefield 1 Revolution', points: 50, category: 'games', type: 'key', image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2n9d.webp' },
         { id: 10, name: 'Battlefield V', points: 50, category: 'games', type: 'key', image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1xbv.webp' },
